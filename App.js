@@ -2,10 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
+//ESTILOS
 const estilos = StyleSheet.create({
   tudo: {
     flex: 1,
-    backgroundColor: '#f7f',
+    backgroundColor: '#ffa500',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
@@ -16,11 +17,13 @@ const estilos = StyleSheet.create({
     color: '#fff',
   },
   botao: {
-    backgroundColor: 'red',
+    backgroundColor: '#4682b4',
     width: 64,
     height: 64,
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 8,
+    
   },
   botaoTexto: {
     fontSize: 48,
@@ -30,7 +33,7 @@ const estilos = StyleSheet.create({
 
 export default function App() {
   const [contador, setContador] = React.useState(0);
-
+  
   return (
     <View style={estilos.tudo}>
       <TouchableOpacity
