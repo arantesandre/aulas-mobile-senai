@@ -5,7 +5,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 const estilos = StyleSheet.create({
   tudo: {
     flex: 1,
-    backgroundColor: '#f7ff',
+    backgroundColor: '#f7f',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
