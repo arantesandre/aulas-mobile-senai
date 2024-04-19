@@ -5,7 +5,8 @@ const estilos = StyleSheet.create({
   botao: {
     padding: 16,
     borderRadius: 8,
-    border: "1px solid #fff",
+    borderWidth: 1,
+    borderColor:'white',
     justifyContent: "center",
     alignItems: "center",
   },
