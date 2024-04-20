@@ -14,7 +14,7 @@ const estilos = StyleSheet.create({
   },
   contador: {
     fontSize: 72,
-    color: CORES.BRANCA,
+    color: CORES.TEXTO_PADRAO,
   },
 });
 

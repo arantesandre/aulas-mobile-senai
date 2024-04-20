@@ -5,10 +5,6 @@ const estilos = StyleSheet.create({
   botao: {
     padding: 16,
     borderRadius: 8,
-    borderWidth: 1,
-    borderColor:'white',
-    justifyContent: "center",
-    alignItems: "center",
   },
 
   botaoPrimario: {
