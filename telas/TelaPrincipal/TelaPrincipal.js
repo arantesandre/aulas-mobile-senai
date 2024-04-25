@@ -17,6 +17,13 @@ const TelaPrincipal = (props) => {
       >
         Tela Contador
       </BotaoCustomizado>
+
+      <BotaoCustomizado
+        cor="secundaria"
+        onPress={() => props.navigation.navigate(TELAS.TELA_FORMULARIO)}
+      >
+        Tela Formulário
+      </BotaoCustomizado>
     </View>
   );
 };
