@@ -1,13 +1,14 @@
 import React from "react";
 import { Switch, View } from "react-native";
 import RNPickerSelect from 'react-native-picker-select';
-import CampoTextoCustomizado from "../../comum/componentes/CampoTextoCustomizado/CampoTextoCustomizado";
-import estilos from "./TelaFormularioStyle";
 import BotaoCustomizado from "../../comum/componentes/BotaoCustomizado/BotaoCustomizado";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-// https://oblador.github.io/react-native-vector-icons/
+import CampoTextoCustomizado from "../../comum/componentes/CampoTextoCustomizado/CampoTextoCustomizado";
+// import CORES from "../../comum/cosntantes/cores";
 
 import { estilos, pickerSelectStyles } from './TelaFormularioStyle';
+
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+// https://oblador.github.io/react-native-vector-icons/
 
 const TelaFormulario = () => {
   const [campoNome, setCampoNome] = React.useState("");
@@ -70,7 +71,7 @@ const TelaFormulario = () => {
           { label: "Surf", value: "4" },
           { label: "Sakate", value: "5" },
         ]}
-        placeholder={{ label: "Selecione um Esporte", value: null }}
+        placeholder={{ label: "Selecione um Esporte", value: undefined }}
       />
 
       <BotaoCustomizado onPress={salvar}>Salvar</BotaoCustomizado>
