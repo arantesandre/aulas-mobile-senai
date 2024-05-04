@@ -1,11 +1,11 @@
 import React from "react";
 import { Switch, View } from "react-native";
-import RNPickerSelect from 'react-native-picker-select';
+import RNPickerSelect from "react-native-picker-select";
 import BotaoCustomizado from "../../comum/componentes/BotaoCustomizado/BotaoCustomizado";
 import CampoTextoCustomizado from "../../comum/componentes/CampoTextoCustomizado/CampoTextoCustomizado";
 // import CORES from "../../comum/cosntantes/cores";
 
-import { estilos, pickerSelectStyles } from './TelaFormularioStyle';
+import { estilos, pickerSelectStyles } from "./TelaFormularioStyle";
 
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 // https://oblador.github.io/react-native-vector-icons/
