@@ -1,5 +1,5 @@
-import { View, Text } from 'react-native';
-import estilos from './TelaListaTarefasStyle';
+import { Text, View } from "react-native";
+import estilos from "./TelaListaTarefasStyle";
 
 const ItemTarefa = (props) => {
   console.log(props);

@@ -9,4 +9,5 @@ const estilos = StyleSheet.create({
   },
   textoVazio: { fontSize: 16 },
 });
+
 export default estilos;

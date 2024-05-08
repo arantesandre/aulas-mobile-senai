@@ -2,13 +2,13 @@ import React from 'react';
 import { FlatList, SafeAreaView, View } from 'react-native';
 
 import ListagemVazia from '../../comum/componentes/ListagemVazia/ListagemVazia';
-import ItemTarefa from './itemTarefa';
+import ItemTarefa from './ItemTarefa';
+
 import SeparadorListagens from './SeparadorListagem';
 import estilos from './TelaListaTarefasStyle';
 
 import CampoTextoCustomizado from '../../comum/componentes/CampoTextoCustomizado/CampoTextoCustomizado';
 import BotaoCustomizado from '../../comum/componentes/BotaoCustomizado/BotaoCustomizado';
-
 
 const TelaListaTarefas = () => {
   const [listaTarefas, setListaTarefas] = React.useState([]);
