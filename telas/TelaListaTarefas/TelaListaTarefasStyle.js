@@ -19,7 +19,9 @@ const estilos = StyleSheet.create({
   },
   containerCampoAdicionar: {
     flexDirection: "row",
+    alignItems: "flex-end",
     padding: 16,
+    gap: 16,
   },
   campoAdicionar: {
     flex: 1,

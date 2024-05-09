@@ -1,35 +1,69 @@
-import React from 'react';
-import { FlatList, SafeAreaView, View } from 'react-native';
+import React from "react";
+import { FlatList, SafeAreaView, View } from "react-native";
+import { useEffect } from "react";
 
-import ListagemVazia from '../../comum/componentes/ListagemVazia/ListagemVazia';
-import ItemTarefa from './ItemTarefa';
+import ListagemVazia from "../../comum/componentes/ListagemVazia/ListagemVazia";
+import ItemTarefa from "./ItemTarefa";
+import SeparadorListagens from "./SeparadorListagem";
+import estilos from "./TelaListaTarefasStyle";
 
-import SeparadorListagens from './SeparadorListagem';
-import estilos from './TelaListaTarefasStyle';
-
-import CampoTextoCustomizado from '../../comum/componentes/CampoTextoCustomizado/CampoTextoCustomizado';
-import BotaoCustomizado from '../../comum/componentes/BotaoCustomizado/BotaoCustomizado';
+import CampoTextoCustomizado from "../../comum/componentes/CampoTextoCustomizado/CampoTextoCustomizado";
+import BotaoCustomizado from "../../comum/componentes/BotaoCustomizado/BotaoCustomizado";
+import {
+  adicionarItemStorage,
+  pegarItemStorage,
+} from "../../comum/servicos/servicoStorage";
+import { CHAVES_SOTORAGE } from "../../comum/cosntantes/chaves-storage";
 
 const TelaListaTarefas = () => {
   const [listaTarefas, setListaTarefas] = React.useState([]);
-  const [campoDescricao, setCampoDescricao] = React.useState('');
+  const [campoDescricao, setCampoDescricao] = React.useState("");
 
-  const adicinarTarefa = () => {
-    // if (campoDescricao !== null && campoDescricao !== undefined && campoDescricao !== '')
-    if (campoDescricao) {
-      const novaLista = [...listaTarefas, { descricao: campoDescricao, id: +new Date() }];
-      setListaTarefas(novaLista);
-      setCampoDescricao('');
-    } else {
-      alert('Campo descrição é obrigatório.');
+  useEffect(() => {
+    const atualizarListagemDoStorage = async () => {
+      const listagemDosStorage = await pegarItemStorage(
+        CHAVES_SOTORAGE.LISTA_TAREFAS
+      );
+      if (listagemDosStorage) {
+        setListaTarefas(JSON.parse(listagemDosStorage));
+      }
+    };
+
+    atualizarListagemDoStorage();
+  }, []);
+
+  const adicinarTarefa = async () => {
+    try {
+      // if (campoDescricao !== null && campoDescricao !== undefined && campoDescricao !== '')
+      if (campoDescricao) {
+        const novaLista = [
+          ...listaTarefas,
+          { descricao: campoDescricao, id: +new Date() },
+        ];
+        setListaTarefas(novaLista);
+        setCampoDescricao("");
+
+        await adicionarItemStorage(CHAVES_SOTORAGE.LISTA_TAREFAS, novaLista);
+      } else {
+        alert("Campo descrição é obrigatório.");
+      }
+    } catch {
+      console.log("Deu erro ao adicionar na lista de tarefas.");
     }
   };
 
   return (
     <SafeAreaView style={estilos.container}>
       <View style={estilos.containerCampoAdicionar}>
-        <CampoTextoCustomizado label='Descrição da tarefa' value={campoDescricao} onChangeText={setCampoDescricao} />
-        <BotaoCustomizado cor='primaria' onPress={adicinarTarefa}>
+        <View style={{ flex: 1 }}>
+          <CampoTextoCustomizado
+            label="Descrição da tarefa"
+            value={campoDescricao}
+            onChangeText={setCampoDescricao}
+          />
+        </View>
+
+        <BotaoCustomizado cor="primaria" onPress={adicinarTarefa}>
           +
         </BotaoCustomizado>
       </View>
