@@ -16,11 +16,11 @@ import { CHAVES_SOTORAGE } from '../../comum/cosntantes/chaves-storage';
 
 const TelaListaTarefas = () => {
   const [listaTarefas, setListaTarefas] = React.useState([]);
-  const [campoDescricao, setCampoDescricao] = React.useState('');
+  const [campoDescricao, setCampoDescricao] = React.useState("");
 
   useEffect(() => {
     const atualizarListagemDoStorage = async () => {
-      const listagemDosStorage = await pegarItemStorage(CHAVES_SOTORAGE.LISTA_TAREFAS); 
+      const listagemDosStorage = await pegarItemStorage(CHAVES_SOTORAGE.LISTA_TAREFAS);
       if (listagemDosStorage) {
         setListaTarefas(JSON.parse(listagemDosStorage));
       }

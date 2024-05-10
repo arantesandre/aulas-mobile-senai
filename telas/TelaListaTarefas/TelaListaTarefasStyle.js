@@ -6,10 +6,10 @@ const estilos = StyleSheet.create({
     flex: 1,
   },
   itemTarefa: {
-    flex:1,
+    flex: 1,
     flexDirection: 'row',
     justifyContent: "space-between",
-    alignItems:'flex-end',
+    alignItems: 'flex-end',
     backgroundColor: CORES.CINZA,
     padding: 20,
     margin: 8,
