@@ -6,6 +6,10 @@ const estilos = StyleSheet.create({
     flex: 1,
   },
   itemTarefa: {
+    flex:1,
+    flexDirection: 'row',
+    justifyContent: "space-between",
+    alignItems:'flex-end',
     backgroundColor: CORES.CINZA,
     padding: 20,
     margin: 8,
@@ -18,8 +22,10 @@ const estilos = StyleSheet.create({
     height: 8,
   },
   containerCampoAdicionar: {
-    flexDirection: "row",
+    flexDirection: 'row',
+    alignItems: 'flex-end',
     padding: 16,
+    gap: 16,
   },
   campoAdicionar: {
     flex: 1,
