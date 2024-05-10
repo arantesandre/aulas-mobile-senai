@@ -1,15 +1,15 @@
 import { StyleSheet } from "react-native";
-import CORES from "../../comum/cosntantes/cores";
+import CORES from "../../comum/constantes/cores";
 
 const estilos = StyleSheet.create({
   container: {
     flex: 1,
   },
   itemTarefa: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'row',
-    justifyContent: "space-between",
     alignItems: 'flex-end',
+    justifyContent: "space-between",
     backgroundColor: CORES.CINZA,
     padding: 20,
     margin: 8,

@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import BotaoCustomizado from "../../comum/componentes/BotaoCustomizado/BotaoCustomizado";
-import TELAS from "../../comum/cosntantes/telas";
+import TELAS from "../../comum/constantes/telas";
 
 const TelaPrincipal = (props) => {
   console.log(props);

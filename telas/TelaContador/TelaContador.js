@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import CORES from "../../comum/cosntantes/cores";
+import CORES from "../../comum/constantes/cores";
 import BotaoCustomizado from "../../comum/componentes/BotaoCustomizado/BotaoCustomizado";
 
 //ESTILOS

@@ -1,5 +1,5 @@
 import { Pressable, Text, StyleSheet } from "react-native";
-import CORES from "../../cosntantes/cores";
+import CORES from "../../constantes/cores";
 
 const estilos = StyleSheet.create({
   botao: {

@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import CORES from "../../cosntantes/cores";
+import CORES from "../../constantes/cores";
 
 const campoTextoCustomizadoStyle = StyleSheet.create({
   container: {
