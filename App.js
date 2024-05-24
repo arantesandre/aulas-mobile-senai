@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
-import CORES from "./comum/cosntantes/cores";
-import TELAS from "./comum/cosntantes/telas";
+import CORES from "./comum/constantes/cores";
+import TELAS from "./comum/constantes/telas";
 import TelaContador from "./telas/TelaContador/TelaContador";
 import TelaPrincipal from "./telas/TelaPrincipal/TelaPrincipal";
 import TelaFormulario from "./telas/TelaFormulario/TelaFormulario";
@@ -10,6 +10,7 @@ import TelaLogin from "./telas/TelaLogin/TelaLogin";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import TelaNovoUsuario from "./telas/TelaNovoUsuario/TelaNovoUsuario";
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,7 @@ export default function App() {
         <Stack.Navigator screenOptions={{ cardStyle: { flex: 1 } }}>
           <Stack.Group screenOptions={{ headerShown: false }}>
             <Stack.Screen name={TELAS.TELA_LOGIN} component={TelaLogin} />
+            <Stack.Screen name={TELAS.TELA_NOVO_USUARIO} component={TelaNovoUsuario} />
           </Stack.Group>
           <Stack.Screen
             name={TELAS.TELA_PRINCIPAL}

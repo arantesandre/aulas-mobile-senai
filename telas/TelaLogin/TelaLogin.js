@@ -41,6 +41,14 @@ const TelaLogin = (props) => {
       <BotaoCustomizado cor="primaria" onPress={entrar}>
         Entrar
       </BotaoCustomizado>
+
+      <BotaoCustomizado
+        onPress={() => {
+          props.navigation.navigate(TELAS.TELA_NOVO_USUARIO);
+        }}
+      >
+        Novo Cadastro
+      </BotaoCustomizado>
     </View>
   );
 };
