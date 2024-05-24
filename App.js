@@ -12,6 +12,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import TelaNovoUsuario from "./telas/TelaNovoUsuario/TelaNovoUsuario";
 
+import { useEffect, useState } from "react";
+import { pegarItemStorage } from "./comum/servicos/servicoStorage";
+import { CHAVES_STORAGE } from "./comum/constantes/chaves-storage";
+
 const Stack = createStackNavigator();
 
 //ESTILOS
@@ -23,13 +27,38 @@ const estilos = StyleSheet.create({
 });
 
 export default function App() {
+  const [usuarioLogado, setUsuarioLogado] = useState();
+
+  useEffect(() => {
+    const verificarSeUsuarioEstaLogado = async () => {
+      const usuarioQueEstaNoStorage = await pegarItemStorage(
+        CHAVES_STORAGE.USUARIO_LOGADO
+      );
+      setUsuarioLogado(usuarioQueEstaNoStorage);
+    };
+
+    verificarSeUsuarioEstaLogado();
+  }, []);
+
+  if (usuarioLogado === undefined) {
+    return <></>;
+  }
+
   return (
     <View style={estilos.todoApp}>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{ cardStyle: { flex: 1 } }}>
+        <Stack.Navigator
+          initialRouteName={
+            usuarioLogado ? TELAS.TELA_PRINCIPAL : TELAS.TELA_LOGIN
+          }
+          screenOptions={{ cardStyle: { flex: 1 } }}
+        >
           <Stack.Group screenOptions={{ headerShown: false }}>
             <Stack.Screen name={TELAS.TELA_LOGIN} component={TelaLogin} />
-            <Stack.Screen name={TELAS.TELA_NOVO_USUARIO} component={TelaNovoUsuario} />
+            <Stack.Screen
+              name={TELAS.TELA_NOVO_USUARIO}
+              component={TelaNovoUsuario}
+            />
           </Stack.Group>
           <Stack.Screen
             name={TELAS.TELA_PRINCIPAL}
