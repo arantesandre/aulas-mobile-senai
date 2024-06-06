@@ -27,6 +27,13 @@ const TelaPrincipal = (props) => {
       >
         Lista de Tarefas
       </BotaoCustomizado>
+
+      <BotaoCustomizado
+        cor="secundaria"
+        onPress={() => props.navigation.navigate(TELAS.TELA_LISTA_USUARIOS)}
+      >
+        Lista de Usuários
+      </BotaoCustomizado>
     </View>
   );
 };
